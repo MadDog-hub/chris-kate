@@ -90,7 +90,7 @@ const RusticInvitationReveal = ({ animationsEnabled }: RusticInvitationRevealPro
                 className="text-gray-600 italic text-[18px]"
                 style={{ fontFamily: 'Brush Script MT, cursive' }}
               >
-                {polaroid.alt === 'Forever' ? "Save the date photos and video coming soon" : polaroid.alt}
+                {polaroid.alt}
               </p>
             </div>
           </div>

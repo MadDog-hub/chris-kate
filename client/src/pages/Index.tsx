@@ -91,7 +91,6 @@ const Index = () => {
         />
         Your browser does not support the audio element.
       </audio>
-
       <div className="min-h-screen relative">
         <Navigation />
 
@@ -111,9 +110,7 @@ const Index = () => {
           {/* The Proposal Video Section */}
           <div className="w-full">
             <div className="text-center py-8 bg-gradient-to-b from-background to-background/95">
-              <h2 className="text-4xl md:text-5xl font-script italic text-primary" data-testid="text-proposal-header">
-                The Proposal on
-              </h2>
+              <h2 className="text-4xl md:text-5xl font-script italic text-primary" data-testid="text-proposal-header">The Proposal</h2>
             </div>
             <CoverSection
               imageUrl={proposalVideo}

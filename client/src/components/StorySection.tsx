@@ -11,6 +11,8 @@ import dinnerImage from '@assets/december-20-2020-dinner.png';
 import proposalImage1 from '@assets/proposal-chocolate-hills-1.jpg';
 import proposalImage2 from '@assets/proposal-chocolate-hills-2.jpg';
 import trafficImage from '@assets/traffic-encounter.jpg';
+import waterfallImage from '@assets/IMG_0708_1762357302284.JPG';
+import themeParkImage from '@assets/IMG_2586_1762357302284.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +30,7 @@ const StorySection = () => {
       subtitle: "",
       text: "Through every season, we promise to walk hand in hand, embracing both joy and challenge with unwavering love and faith.",
       fullText: "",
-      image: proposalImage2,
+      image: waterfallImage,
       icon: Heart,
       showReadButton: false
     },
@@ -38,9 +40,9 @@ const StorySection = () => {
       subtitle: "",
       text: "Together, we step into a future filled with hope and endless possibilities, building a life rooted in love and shared dreams.",
       fullText: "",
-      image: null,
+      image: themeParkImage,
       icon: Sparkles,
-      showReadButton: true
+      showReadButton: false
     },
     {
       id: 3,
@@ -58,9 +60,9 @@ const StorySection = () => {
       subtitle: "How It All Began",
       text: "Their story began, as so many modern tales do, with a mutual connection on FB Dating in September 2019. This initial exchange was fleeting, lasting barely a week before Kate deleted the account, which she had only created for a feature trial.",
       fullText: "",
-      image: trafficImage,
+      image: null,
       icon: BookOpen,
-      showReadButton: false
+      showReadButton: true
     }
   ];
 
@@ -202,7 +204,7 @@ const StorySection = () => {
               style={{ width: '100vw', minWidth: '100vw' }}
             >
               <div 
-                className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center h-full relative overflow-hidden rounded-3xl p-8 transition-all duration-300 bg-black/5 dark:bg-white/5 border border-white/10 backdrop-blur-sm"
+                className={`max-w-6xl mx-auto ${card.image ? 'grid lg:grid-cols-2 gap-8 lg:gap-16' : 'flex flex-col justify-center'} items-center h-full relative overflow-hidden rounded-3xl p-8 sm:p-12 transition-all duration-300 bg-black/5 dark:bg-white/5 border border-white/10 backdrop-blur-sm`}
                 style={{
                   background: mousePosition[card.id] 
                     ? `radial-gradient(600px circle at ${mousePosition[card.id].x}px ${mousePosition[card.id].y}px, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02) 40%), rgba(0, 0, 0, 0.05)`
@@ -212,84 +214,111 @@ const StorySection = () => {
                 onMouseLeave={() => handleMouseLeave(card.id)}
                 data-testid={`card-story-${card.id}`}
               >
-                <div className={`space-y-6 sm:space-y-8 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="inline-flex items-center justify-center mb-4 sm:mb-6">
-                    <card.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary" strokeWidth={1.5} />
-                  </div>
-                  
-                  <div>
-                    <p className="text-sm sm:text-base text-primary/80 mb-2 font-semibold" data-testid={`text-story-card-${card.id}-subtitle`}>
-                      {card.subtitle}
-                    </p>
-                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic mb-4 sm:mb-6 text-foreground" data-testid={`text-story-card-${card.id}-title`}>
-                      {card.title}
-                    </h3>
-                  </div>
-                  
-                  <p className="text-base sm:text-lg leading-relaxed text-foreground/90" data-testid={`text-story-card-${card.id}-text`}>
-                    {card.text}
-                  </p>
-
-                  {card.fullText && (
-                    <p className="text-base sm:text-lg font-body text-foreground/80 mt-4">
-                      {card.fullText}
-                    </p>
-                  )}
-
-                  {card.showReadButton ? (
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      onClick={() => setOpenDialog(true)}
-                      className="mt-8 group hover:bg-primary hover:text-primary-foreground transition-all border-primary/30"
-                      data-testid="button-read-full-story"
-                    >
-                      <BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                      Read Full Story
-                    </Button>
-                  ) : (
-                    <div className="flex items-center space-x-4 pt-4 sm:pt-6">
-                      <div className="w-12 sm:w-16 h-px bg-primary-foreground/60"></div>
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary-foreground/70" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
-                      </svg>
-                      <div className="w-12 sm:w-16 h-px bg-primary-foreground/60"></div>
-                    </div>
-                  )}
-                </div>
-
-                {card.image && (
-                  <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className="aspect-square max-w-[70vw] sm:max-w-sm md:max-w-md mx-auto relative">
-                      <img
-                        src={card.image}
-                        alt={`${card.title} moment`}
-                        className="w-full h-full object-cover rounded-2xl shadow-lg"
-                        data-testid={`img-story-card-${card.id}`}
-                      />
-
-                      <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4">
-                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground/70 animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 24 24">
-                          <path fill="currentColor" d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z"/>
-                        </svg>
+                {card.image ? (
+                  <>
+                    <div className={`space-y-6 sm:space-y-8 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                      <div className="inline-flex items-center justify-center mb-4 sm:mb-6">
+                        <card.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary" strokeWidth={1.5} />
                       </div>
+                      
+                      <div>
+                        <p className="text-sm sm:text-base text-primary/80 mb-2 font-semibold" data-testid={`text-story-card-${card.id}-subtitle`}>
+                          {card.subtitle}
+                        </p>
+                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic mb-4 sm:mb-6 text-foreground" data-testid={`text-story-card-${card.id}-title`}>
+                          {card.title}
+                        </h3>
+                      </div>
+                      
+                      <p className="text-base sm:text-lg leading-relaxed text-foreground/90" data-testid={`text-story-card-${card.id}-text`}>
+                        {card.text}
+                      </p>
 
-                      <div className="absolute -bottom-1 sm:-bottom-2 -left-1 sm:-left-2">
-                        <svg className="w-4 h-4 sm:w-6 sm:h-6 text-primary-foreground/60 animate-pulse" viewBox="0 0 24 24">
+                      {card.fullText && (
+                        <p className="text-base sm:text-lg font-body text-foreground/80 mt-4">
+                          {card.fullText}
+                        </p>
+                      )}
+
+                      <div className="flex items-center space-x-4 pt-4 sm:pt-6">
+                        <div className="w-12 sm:w-16 h-px bg-primary-foreground/60"></div>
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary-foreground/70" viewBox="0 0 24 24">
                           <path fill="currentColor" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
                         </svg>
+                        <div className="w-12 sm:w-16 h-px bg-primary-foreground/60"></div>
                       </div>
                     </div>
-                  </div>
-                )}
 
-                {!card.image && !card.showReadButton && (
-                  <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''} flex items-center justify-center`}>
-                    <div className="text-center space-y-6">
-                      <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-primary/10 border-4 border-primary/30">
-                        <card.icon className="w-16 h-16 text-primary" strokeWidth={1.5} />
+                    <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                      <div className="aspect-square max-w-[70vw] sm:max-w-sm md:max-w-md mx-auto relative">
+                        <img
+                          src={card.image}
+                          alt={`${card.title} moment`}
+                          className="w-full h-full object-cover rounded-2xl shadow-lg"
+                          data-testid={`img-story-card-${card.id}`}
+                        />
+
+                        <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4">
+                          <svg className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground/70 animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z"/>
+                          </svg>
+                        </div>
+
+                        <div className="absolute -bottom-1 sm:-bottom-2 -left-1 sm:-left-2">
+                          <svg className="w-4 h-4 sm:w-6 sm:h-6 text-primary-foreground/60 animate-pulse" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
+                          </svg>
+                        </div>
                       </div>
                     </div>
+                  </>
+                ) : (
+                  <div className="text-center space-y-6 sm:space-y-8 max-w-3xl mx-auto">
+                    <div>
+                      <p className="text-sm sm:text-base text-primary/80 mb-2 font-semibold" data-testid={`text-story-card-${card.id}-subtitle`}>
+                        {card.subtitle}
+                      </p>
+                      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic mb-6 sm:mb-8 text-foreground" data-testid={`text-story-card-${card.id}-title`}>
+                        {card.title}
+                      </h3>
+                    </div>
+                    
+                    <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-foreground/90 italic" data-testid={`text-story-card-${card.id}-text`}>
+                      {card.text}
+                    </p>
+
+                    {card.fullText && (
+                      <p className="text-sm sm:text-base text-foreground/70 mt-4">
+                        {card.fullText}
+                      </p>
+                    )}
+
+                    {card.showReadButton ? (
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={() => setOpenDialog(true)}
+                        className="mt-8 group hover:bg-primary hover:text-primary-foreground transition-all border-primary/30"
+                        data-testid="button-read-full-story"
+                      >
+                        <BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                        Read Full Story
+                      </Button>
+                    ) : (
+                      <div className="flex items-center justify-center space-x-4 sm:space-x-6 pt-6 sm:pt-8">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-foreground/40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
+                        </svg>
+                        <div className="w-16 sm:w-20 h-px bg-foreground/30"></div>
+                        <svg className="w-6 h-6 sm:w-7 sm:h-7 text-foreground/60" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
+                        </svg>
+                        <div className="w-16 sm:w-20 h-px bg-foreground/30"></div>
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-foreground/40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

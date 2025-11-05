@@ -24,39 +24,30 @@ const StorySection = () => {
   const storyCards = [
     {
       id: 1,
-      title: "The First Connection",
-      subtitle: "September 2019",
-      text: "Their story began on FB Dating in September 2019. Chris persisted through Kate's cautious nature and long silences. Kate had one unique condition: they could only meet if fate intervened, if they met purely by chance.",
-      fullText: "Their story began on FB Dating in September 2019. Though Kate deleted her account after just a week, Chris was undeterred. He tracked down her main Facebook account and messaged her sporadically. Despite Kate's cautious nature and long silences—sometimes stretching four months—Chris persisted. Kate had one unique condition: they could only meet if fate intervened, if they met purely by chance.",
+      title: "Our Promise",
+      subtitle: "",
+      text: "Through every season, we promise to walk hand in hand, embracing both joy and challenge with unwavering love and faith.",
+      fullText: "",
       image: proposalImage2,
       icon: Heart
     },
     {
       id: 2,
-      title: "Fate Intervenes",
-      subtitle: "A Chance Encounter",
-      text: "One evening, Chris spotted Kate in traffic. He captured the moment with a quick photo and sent it immediately. Kate's shock dissolved into delighted surprise. The universe had spoken, and she finally agreed to meet.",
-      fullText: "One evening, Chris was weaving through traffic on his motorcycle when he spotted a familiar face with wonderfully expressive cheeks in a tricycle—it was Kate! Remembering her condition, he captured the moment with a quick photo and sent it immediately. Kate's shock dissolved into delighted surprise. The universe had spoken, and she finally agreed to meet.",
-      image: trafficImage,
+      title: "Our Future",
+      subtitle: "",
+      text: "Together, we step into a future filled with hope and endless possibilities, building a life rooted in love and shared dreams.",
+      fullText: "",
+      image: proposalImage1,
       icon: Sparkles
     },
     {
       id: 3,
-      title: "The Rain Sign",
-      subtitle: "December 20, 2020",
-      text: "Chris courted Kate with genuine devotion, but she held one last extraordinary condition—it had to be blessed by pouring rain. Then came that fateful night. As they drove home, the heavens opened with a sudden, beautiful downpour. In that rain-streaked car, Chris received his joyous 'yes.'",
-      fullText: "Chris courted Kate with genuine devotion, but she held one last extraordinary condition. After reading Colossians 3:17 in her devotional, she sought an unmistakable divine answer—it had to be blessed by pouring rain. Then came that fateful night after dinner. As they drove home, the heavens opened with a sudden, beautiful downpour. In that rain-streaked car, Chris received his joyous 'yes.'",
-      image: dinnerImage,
-      icon: CloudRain
-    },
-    {
-      id: 4,
-      title: "The Proposal",
-      subtitle: "Chocolate Hills, Bohol",
-      text: "Four beautiful years unfolded with shared laughter, quiet strength, and enduring love. Chris brought Kate to meet his family in Bohol, leading her to the highest point of the Chocolate Hills. As a soft, romantic mist began to fall, Chris knelt down and asked: 'Will you marry me?'",
-      fullText: "Four beautiful years unfolded with shared laughter, quiet strength, and enduring love. To mark a new chapter, Chris brought Kate to meet his family in Bohol. He led her to the highest point of the Chocolate Hills, a panoramic view stretching before them. As a soft, romantic mist began to fall—nature echoing their past promise—Chris knelt down and asked the most important question of his life: 'Will you marry me?'",
-      image: proposalImage1,
-      icon: MapPin
+      title: "Our Love Story",
+      subtitle: "How It All Began",
+      text: "Their story began, as so many modern tales do, with a mutual connection on FB Dating in September 2019. This initial exchange was fleeting, lasting barely a week before Kate deleted the account, which she had only created for a feature trial.",
+      fullText: "",
+      image: trafficImage,
+      icon: BookOpen
     }
   ];
 
@@ -163,10 +154,10 @@ const StorySection = () => {
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 3.8 } : { duration: 0 }}
         >
           <h2 className="text-4xl sm:text-5xl font-script italic font-black mb-6 sm:mb-8 text-foreground" data-testid="text-story-title">
-            Our Love Story
+            Together Forever
           </h2>
           <p className="text-base sm:text-lg max-w-2xl mx-auto mb-4 text-foreground/90">
-            Scroll to discover how Chris & Kate's journey began
+            Scroll to discover our commitment to each other
           </p>
           
           <div className="flex items-center justify-center space-x-4 mt-6 sm:mt-8">
@@ -304,10 +295,10 @@ const StorySection = () => {
                 
                 <div className="max-w-2xl mx-auto">
                   <p className="text-xl sm:text-2xl leading-relaxed italic mb-4 text-foreground">
-                    "Whatever you do, whether in word or deed, do it all in the name of the Lord Jesus."
+                    "Above all, clothe yourselves with love, which binds us all together in perfect harmony."
                   </p>
                   <p className="text-base sm:text-lg font-body text-foreground/80">
-                    Colossians 3:17
+                    Colossians 3:14
                   </p>
                 </div>
                 

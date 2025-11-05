@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import prenup1 from '@assets/the proposal_1762333041256.jpg';
-import prenup2 from '@assets/proposal_1762333051185.JPG';
+import prenup1 from '@assets/Soulmates_1762356015069.png';
+import prenup2 from '@assets/Forever_1762356015068.jpg';
 import monogram from '../assets/I&R-monogram.png';
 
 import MONOGRAM_removebg_preview from "@assets/MONOGRAM-removebg-preview.png";

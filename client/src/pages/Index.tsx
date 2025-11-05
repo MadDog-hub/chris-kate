@@ -21,7 +21,6 @@ import { AnimationContext } from '@/contexts/AnimationContext';
 
 // Cover videos from Cloudinary
 const cover1Video = 'https://res.cloudinary.com/ddkgrqrt9/video/upload/v1762332256/Sunset_1_d5jxuo.mov';
-const cover2Video = 'https://res.cloudinary.com/ddkgrqrt9/video/upload/v1762332253/Sunset_2_uvqh3l.mov';
 const proposalVideo = 'https://res.cloudinary.com/ddkgrqrt9/video/upload/v1762332256/Proposal_nh5seg.mov';
 
 const Index = () => {
@@ -125,10 +124,6 @@ const Index = () => {
           />
           <VenueSection />
           <DressCodeSection />
-          <CoverSection
-            imageUrl={cover2Video}
-            alt="Chris & Kate Wedding Cover Video 2"
-          />
           <HashtagGiftsSection />
           <RSVPSection />
           <MemorableMomentsSection />

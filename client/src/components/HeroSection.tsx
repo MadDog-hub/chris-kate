@@ -105,6 +105,25 @@ const HeroSection = () => {
         </div>
 
       </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <div className="flex flex-col items-center gap-2">
+          <p className="text-white text-sm font-light tracking-wide">Scroll Down</p>
+          <svg 
+            className="w-6 h-6 text-white" 
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+
       {/* Improved mobile responsiveness */}
       <style>{`
         .hero-section {

@@ -25,7 +25,7 @@ const MemorableMomentsSection = () => {
             Save the Date
           </h2>
           <p className="text-xl font-script italic max-w-2xl mx-auto leading-relaxed text-white/90">
-            Captured moments before forever begins
+            Pre-wedding Photos Coming Soon
           </p>
         </motion.div>
 
@@ -44,17 +44,6 @@ const MemorableMomentsSection = () => {
               data-testid="img-save-date"
             />
           </div>
-          
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-          >
-            <p className="text-2xl md:text-3xl font-script italic text-gold-bright" data-testid="text-video-coming-soon">
-              Save the date photos and video coming soon
-            </p>
-          </motion.div>
         </motion.div>
       </div>
     </motion.section>

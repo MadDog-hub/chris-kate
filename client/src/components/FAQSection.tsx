@@ -64,6 +64,11 @@ const FAQSection = () => {
       question: "How long will the celebration last?",
       icon: Calendar,
       answer: "We have planned a full evening of dinner, dancing, and fun! Your presence means the world to us, and we would be honored if you could stay until the very end of the program so we can properly thank you and celebrate our final dance with all of our loved ones."
+    },
+    {
+      question: "Can I bring a plus one?",
+      icon: Users,
+      answer: "We have carefully planned our guest list based on our venue capacity. If your invitation includes a plus one, it will be noted on your RSVP. If you have any questions about your invitation, please feel free to reach out to us directly."
     }
   ];
 
@@ -123,7 +128,7 @@ const FAQSection = () => {
               {openItems.includes(index) && (
                 <div className="px-8 pb-6">
                   <div className="w-full h-px bg-border mb-4"></div>
-                  <p className="text-foreground leading-relaxed">
+                  <p className="text-foreground leading-relaxed font-satoshi text-base">
                     {faq.answer}
                   </p>
                 </div>

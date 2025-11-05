@@ -19,7 +19,7 @@ const Navigation = () => {
     { name: 'Entourage', href: '#entourage' },
     { name: 'Dress Code', href: '#dresscode' },
     { name: 'Prenup Photos', href: '#prenup-photos' },
-    { name: 'RSVP', href: 'https://rustin-isabel-rsvp.replit.app' }
+    { name: 'RSVP', href: '#rsvp' }
   ];
 
   useEffect(() => {

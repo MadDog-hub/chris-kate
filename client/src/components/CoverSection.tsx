@@ -12,6 +12,7 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
   const iframeRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const playerIdRef = useRef(`youtube-player-${Math.random().toString(36).substr(2, 9)}`);
   
   // Detect if the URL is a YouTube video
   const isYouTube = imageUrl.includes('youtube.com') || imageUrl.includes('youtu.be');
@@ -51,18 +52,34 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
         return;
       }
 
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+      // Check if script is already being loaded
+      if (!(window as any).youtubeAPILoading) {
+        (window as any).youtubeAPILoading = true;
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+      }
 
-      (window as any).onYouTubeIframeAPIReady = initializePlayer;
+      // Store callbacks for multiple players
+      if (!(window as any).youtubePlayerCallbacks) {
+        (window as any).youtubePlayerCallbacks = [];
+      }
+      (window as any).youtubePlayerCallbacks.push(initializePlayer);
+
+      // Override the ready callback to call all stored callbacks
+      (window as any).onYouTubeIframeAPIReady = () => {
+        if ((window as any).youtubePlayerCallbacks) {
+          (window as any).youtubePlayerCallbacks.forEach((callback: any) => callback());
+          (window as any).youtubePlayerCallbacks = [];
+        }
+      };
     };
 
     const initializePlayer = () => {
       if (!iframeRef.current) return;
 
-      playerRef.current = new (window as any).YT.Player(iframeRef.current, {
+      playerRef.current = new (window as any).YT.Player(playerIdRef.current, {
         videoId: videoId,
         playerVars: {
           autoplay: 1,
@@ -136,6 +153,7 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
             }}
           >
             <div
+              id={playerIdRef.current}
               ref={iframeRef as any}
               style={{
                 position: 'absolute',

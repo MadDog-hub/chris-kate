@@ -38,7 +38,11 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
     if (!isYouTube || typeof window === 'undefined') return;
 
     const videoId = getYouTubeVideoId(imageUrl);
-    if (!videoId) return;
+    console.log('YouTube Video ID extracted:', videoId, 'from URL:', imageUrl);
+    if (!videoId) {
+      console.error('Failed to extract video ID from:', imageUrl);
+      return;
+    }
 
     // Load YouTube IFrame API
     const loadYouTubeAPI = () => {

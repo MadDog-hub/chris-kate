@@ -21,8 +21,8 @@ import BowTieGraphic from '@/components/BowTieGraphic';
 import { AnimationContext } from '@/contexts/AnimationContext';
 
 // Cover videos
-const cover1Video = 'https://youtu.be/uj_RuA9nnRY';
-const cover2Video = 'https://youtu.be/P77Zqlyj51g';
+const cover1Video = 'https://www.youtube.com/watch?v=uj_RuA9nnRY';
+const cover2Video = 'https://www.youtube.com/watch?v=P77Zqlyj51g';
 const proposalVideo = 'https://res.cloudinary.com/ddkgrqrt9/video/upload/v1762332256/Proposal_nh5seg.mov';
 
 const Index = () => {

@@ -37,25 +37,6 @@ const DressCodeSection = () => {
           >
             <div className="bg-card/30 border border-border rounded-xl p-8 shadow-soft hover-elegant transition-all duration-500 h-full relative">
               <div className="text-center">
-                <motion.div
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.6, delay: 8.3 }}
-                >
-                  <div className="mb-6 relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent rounded-2xl"></div>
-                    <h3 className="text-xl font-display font-medium text-foreground mb-4 relative z-10">
-                      FOR PRINCIPAL SPONSORS
-                    </h3>
-                    <p className="text-sm text-foreground/80 mb-3">(Parents and Principal Sponsors)</p>
-                    <div className="inline-block px-4 py-2 bg-primary/10 rounded-full">
-                      <span className="text-sm font-normal text-foreground">GENTLEMEN: BARONG/MODERN BARONG</span>
-                    </div>
-                    <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mt-2">
-                      <span className="text-sm font-normal text-foreground">LADIES: BEIGE/CHAMPAGNE/ESPRESSO BROWN</span>
-                    </div>
-                  </div>
-                </motion.div>
                 <motion.img 
                   src={principalSponsorsImage}
                   alt="Principal Sponsors attire guide"
@@ -64,14 +45,6 @@ const DressCodeSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 8.5 }}
                 />
-                <div className="mt-6">
-                  <p className="text-sm text-foreground/80 mb-3 text-center">Beige/Champagne/Espresso Brown</p>
-                  <div className="flex justify-center gap-3">
-                    <div className="w-12 h-12 rounded-full border-2 border-border shadow-md" style={{ backgroundColor: '#F5F5DC' }}></div>
-                    <div className="w-12 h-12 rounded-full border-2 border-border shadow-md" style={{ backgroundColor: '#F0EAD6' }}></div>
-                    <div className="w-12 h-12 rounded-full border-2 border-border shadow-md" style={{ backgroundColor: '#6F4E37' }}></div>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>
@@ -86,21 +59,6 @@ const DressCodeSection = () => {
           >
             <div className="bg-card/30 border border-border rounded-xl p-8 shadow-soft hover-elegant transition-all duration-500 h-full relative">
               <div className="text-center">
-                <motion.div
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.6, delay: 8.6 }}
-                >
-                  <div className="mb-6 relative">
-                    <div className="absolute inset-0 bg-gradient-to-l from-primary/10 to-transparent rounded-2xl"></div>
-                    <h3 className="text-xl font-display font-medium text-foreground mb-4 relative z-10">
-                      FOR GUESTS
-                    </h3>
-                    <div className="inline-block px-4 py-2 bg-primary/10 rounded-full">
-                      <span className="text-sm font-normal text-foreground">PLAIN BLACK FORMAL/SEMI-FORMAL</span>
-                    </div>
-                  </div>
-                </motion.div>
                 <motion.img 
                   src={guestsImage}
                   alt="Guests attire guide"
@@ -109,14 +67,6 @@ const DressCodeSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 8.8 }}
                 />
-                <div className="mt-6">
-                  <p className="text-sm text-foreground/80 mb-3 text-center">Shades of Black</p>
-                  <div className="flex justify-center gap-3">
-                    <div className="w-12 h-12 rounded-full border-2 border-border shadow-md" style={{ backgroundColor: '#000000' }}></div>
-                    <div className="w-12 h-12 rounded-full border-2 border-border shadow-md" style={{ backgroundColor: '#1a1a1a' }}></div>
-                    <div className="w-12 h-12 rounded-full border-2 border-border shadow-md" style={{ backgroundColor: '#2d2d2d' }}></div>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>
@@ -137,10 +87,10 @@ const DressCodeSection = () => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-base font-display font-semibold text-foreground mb-2">
+                  <h4 className="text-lg font-body font-semibold text-foreground mb-2">
                     Principal Sponsors
                   </h4>
-                  <p className="text-sm text-foreground/70">
+                  <p className="text-base font-body text-foreground/80 leading-relaxed">
                     Gentlemen: Barong/Modern Barong<br />
                     Ladies: Beige/Champagne/Espresso Brown Long Gown/Dress
                   </p>
@@ -153,8 +103,8 @@ const DressCodeSection = () => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-base font-display font-semibold text-foreground mb-2">Guests</h4>
-                  <p className="text-sm text-foreground/70">Plain Black Formal or Semi-Formal attire. Please dress elegantly for this special occasion.</p>
+                  <h4 className="text-lg font-body font-semibold text-foreground mb-2">Guests</h4>
+                  <p className="text-base font-body text-foreground/80 leading-relaxed">Plain Black Formal or Semi-Formal attire. Please dress elegantly for this special occasion.</p>
                 </div>
               </div>
             </div>
@@ -164,10 +114,10 @@ const DressCodeSection = () => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-base font-display font-semibold text-foreground mb-2">
+                  <h4 className="text-lg font-body font-semibold text-foreground mb-2">
                     No White Colors
                   </h4>
-                  <p className="text-sm text-foreground/70">
+                  <p className="text-base font-body text-foreground/80 leading-relaxed">
                     Avoid wearing white, as this color is reserved for the bride.
                   </p>
                 </div>
@@ -179,10 +129,10 @@ const DressCodeSection = () => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-base font-display font-semibold text-foreground mb-2">
+                  <h4 className="text-lg font-body font-semibold text-foreground mb-2">
                     Respectful Attire
                   </h4>
-                  <p className="text-sm text-foreground/70">
+                  <p className="text-base font-body text-foreground/80 leading-relaxed">
                     Kindly ensure your attire is respectful and appropriate for a religious ceremony.
                   </p>
                 </div>

@@ -9,8 +9,9 @@ interface CoverSectionProps {
 }
 
 const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: CoverSectionProps) => {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const iframeRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   
   // Detect if the URL is a YouTube video
   const isYouTube = imageUrl.includes('youtube.com') || imageUrl.includes('youtu.be');
@@ -78,7 +79,7 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
             
             // Set up time checking for looping
             if (startTime !== undefined && endTime !== undefined) {
-              const checkTime = setInterval(() => {
+              intervalRef.current = setInterval(() => {
                 if (playerRef.current && playerRef.current.getCurrentTime) {
                   const currentTime = playerRef.current.getCurrentTime();
                   if (currentTime >= endTime) {
@@ -86,8 +87,6 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
                   }
                 }
               }, 100);
-
-              return () => clearInterval(checkTime);
             }
           },
           onStateChange: (event: any) => {
@@ -106,6 +105,9 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
     loadYouTubeAPI();
 
     return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
       if (playerRef.current && playerRef.current.destroy) {
         playerRef.current.destroy();
       }
@@ -124,17 +126,15 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
               overflow: 'hidden'
             }}
           >
-            <iframe
-              ref={iframeRef}
+            <div
+              ref={iframeRef as any}
               style={{
                 position: 'absolute',
                 top: 0,
                 left: 0,
                 width: '100%',
-                height: '100%',
-                border: 0
+                height: '100%'
               }}
-              allow="autoplay; encrypted-media"
               data-testid="cover-youtube-video"
             />
           </div>

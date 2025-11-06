@@ -58,7 +58,7 @@ const StorySection = () => {
       id: 4,
       title: "Our Love Story",
       subtitle: "How It All Began",
-      text: "Their story began, as so many modern tales do, with a mutual connection on FB Dating in September 2019. This initial exchange was fleeting, lasting barely a week before Kate deleted the account, which she had only created for a feature trial.",
+      text: "Their story began, as so many modern tales do, with a mutual connection on FB Dating in September 2019. This initial exchange was fleeting, lasting barely a week before Kate deleted the account, which she had only created for a feature trial. Chris, immediately drawn to Kate and undeterred by the ensuing silence, tracked down her main Facebook account.",
       fullText: "",
       image: null,
       icon: BookOpen,
@@ -336,7 +336,7 @@ const StorySection = () => {
           </DialogHeader>
           <div className="space-y-6 pt-4">
             <p className="text-base leading-relaxed text-foreground/90">
-              Their story began, as so many modern tales do, with a mutual connection on FB Dating in September 2019. This initial exchange was fleeting, lasting barely a week before Kate deleted the account, which she had only created for a feature trial. Chris, immediately drawn to Kate and undeterred by the ensuing silence, tracked down her main Facebook account. Though Kate never accepted his friend request, they chatted sporadically on Messenger—a frustrating courtship defined by long intervals, sometimes stretching to four months, during which Kate often ignored him. He felt a deeper, insistent pull to meet her, but Kate remained cautious, agreeing to an in-person meeting only if destiny intervened—if they met purely by chance.
+              Their story began, as so many modern tales do, with a mutual connection on FB Dating in September 2019. This initial exchange was fleeting, lasting barely a week before Kate deleted the account, which she had only created for a feature trial. Chris, immediately drawn to Kate and undeterred by the ensuing silence, tracked down her main Facebook account.
             </p>
             <p className="text-base leading-relaxed text-foreground/90">
               Fate, it seemed, was romantic at heart. One evening, Chris was weaving through traffic on his motorcycle when his eyes caught a familiar, striking face with wonderfully expressive cheeks riding in the passenger seat of a tricycle. It was her—Kate! Remembering her unique condition, he acted on instinct, capturing the moment with a quick photo and sending it to her immediately. Kate's shock quickly dissolved into delighted surprise. The universe had spoken, and she finally agreed to meet.

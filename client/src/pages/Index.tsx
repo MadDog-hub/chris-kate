@@ -17,6 +17,8 @@ import Footer from '@/components/Footer';
 import CoverSection from '@/components/CoverSection';
 import InvitationRevealSection from '@/components/InvitationRevealSection';
 import MusicControl from '@/components/MusicControl';
+import BowTieGraphic from '@/components/BowTieGraphic';
+import CurvedLineDivider from '@/components/CurvedLineDivider';
 import { AnimationContext } from '@/contexts/AnimationContext';
 
 // Cover videos from Cloudinary
@@ -102,12 +104,17 @@ const Index = () => {
         {/* Main Content Sections */}
         <main className="relative z-10">
           <HeroSection />
+          <BowTieGraphic />
+          <CurvedLineDivider variant="center" />
           <InvitationRevealSection />
+          <CurvedLineDivider variant="left" />
           <CountdownSection />
+          <CurvedLineDivider variant="right" />
           <StorySection />
           
           {/* The Proposal Video Section */}
           <div className="w-full">
+            <CurvedLineDivider variant="center" />
             <div className="text-center py-8 bg-gradient-to-b from-background to-background/95">
               <h2 className="text-4xl md:text-5xl font-script italic text-primary" data-testid="text-proposal-header">The Proposal</h2>
             </div>
@@ -117,17 +124,26 @@ const Index = () => {
             />
           </div>
           
+          <CurvedLineDivider variant="left" />
           <ScrollTriggeredTimeline />
+          <CurvedLineDivider variant="right" />
           <CoverSection
             imageUrl={cover1Video}
             alt="Chris & Kate Wedding Cover Video 1"
           />
+          <CurvedLineDivider variant="center" />
           <VenueSection />
+          <CurvedLineDivider variant="left" />
           <DressCodeSection />
+          <CurvedLineDivider variant="right" />
           <HashtagGiftsSection />
+          <CurvedLineDivider variant="center" />
           <RSVPSection />
+          <CurvedLineDivider variant="left" />
           <MemorableMomentsSection />
+          <CurvedLineDivider variant="right" />
           <EntourageSection />
+          <CurvedLineDivider variant="center" />
           <FAQSection />
           <Footer />
         </main>

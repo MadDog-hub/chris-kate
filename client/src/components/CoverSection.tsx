@@ -71,6 +71,9 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
           playsinline: 1,
           start: startTime || 0,
           end: endTime,
+          fs: 0,
+          iv_load_policy: 3,
+          disablekb: 1,
         },
         events: {
           onReady: (event: any) => {
@@ -133,10 +136,28 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
                 top: 0,
                 left: 0,
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                pointerEvents: 'none'
               }}
               data-testid="cover-youtube-video"
             />
+            <style>
+              {`
+                .ytp-pause-overlay,
+                .ytp-title,
+                .ytp-title-channel,
+                .ytp-watermark,
+                .ytp-chrome-top,
+                .ytp-show-cards-title,
+                .ytp-endscreen-content,
+                .ytp-gradient-top,
+                .ytp-gradient-bottom {
+                  display: none !important;
+                  opacity: 0 !important;
+                  visibility: hidden !important;
+                }
+              `}
+            </style>
           </div>
         </div>
       </section>

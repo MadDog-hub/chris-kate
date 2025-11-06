@@ -85,11 +85,13 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
               intervalRef.current = setInterval(() => {
                 if (playerRef.current && playerRef.current.getCurrentTime) {
                   const currentTime = playerRef.current.getCurrentTime();
-                  if (currentTime >= endTime) {
+                  // Loop 0.3 seconds before the end to prevent any end screens
+                  if (currentTime >= endTime - 0.3) {
                     playerRef.current.seekTo(startTime, true);
+                    playerRef.current.playVideo();
                   }
                 }
-              }, 100);
+              }, 50);
             }
           },
           onStateChange: (event: any) => {
@@ -141,20 +143,49 @@ const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: Cov
               }}
               data-testid="cover-youtube-video"
             />
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: 'none',
+                zIndex: 1
+              }}
+            />
             <style>
               {`
                 .ytp-pause-overlay,
                 .ytp-title,
+                .ytp-title-text,
+                .ytp-title-link,
                 .ytp-title-channel,
+                .ytp-title-channel-logo,
                 .ytp-watermark,
                 .ytp-chrome-top,
                 .ytp-show-cards-title,
                 .ytp-endscreen-content,
+                .ytp-endscreen-previous,
+                .ytp-endscreen-next,
+                .ytp-ce-element,
+                .ytp-cards-teaser,
                 .ytp-gradient-top,
-                .ytp-gradient-bottom {
+                .ytp-gradient-bottom,
+                .ytp-chrome-top-buttons,
+                .ytp-cards-button,
+                .ytp-paid-content-overlay,
+                a[class*="ytp"],
+                div[class*="ytp-pause"],
+                div[class*="ytp-title"],
+                div[class*="ytp-watermark"] {
                   display: none !important;
                   opacity: 0 !important;
                   visibility: hidden !important;
+                  pointer-events: none !important;
+                }
+                iframe[src*="youtube"] {
+                  pointer-events: none !important;
                 }
               `}
             </style>

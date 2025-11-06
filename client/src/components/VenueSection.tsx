@@ -1,5 +1,5 @@
 "use client";
-import { MapPin, ExternalLink, Clock } from 'lucide-react';
+import { MapPin, ExternalLink, Clock, CloudRain } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
 
@@ -110,6 +110,10 @@ const VenueSection = () => {
                 <p className="text-sm text-foreground/70 italic pl-3" data-testid={`text-${venue.title.toLowerCase()}-details`}>
                   {venue.details}
                 </p>
+                <div className="flex items-start gap-2 pl-3 pt-2 text-sm text-foreground/70" data-testid={`text-${venue.title.toLowerCase()}-weather-note`}>
+                  <CloudRain className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <p className="italic">Please bring an umbrella for unpredictable weather.</p>
+                </div>
               </div>
 
               {/* Map Section */}

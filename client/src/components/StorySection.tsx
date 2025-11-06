@@ -357,6 +357,10 @@ const StorySection = () => {
               Four beautiful years unfolded while living a life of shared laughter, quiet strength, and enduring love through every up and down. To mark a new chapter, Chris brought Kate to the breathtaking beauty of Bohol to meet his extended family. He led her to the highest point of the Chocolate Hills, a panoramic view stretching before them. As a soft, romantic mist began to fall—nature echoing their past promise—Chris knelt down. Looking into the eyes of the woman who waited for her answered prayer, he asked her the most important question of his life: "Will you marry me?"
             </p>
             
+            <p className="text-sm italic text-foreground/60 text-right mt-6">
+              — written by Chris
+            </p>
+            
             <div className="flex justify-center mt-8 pt-6 border-t border-foreground/10">
               <Button
                 variant="outline"

@@ -1,12 +1,147 @@
+import { useEffect, useRef } from 'react';
+
 interface CoverSectionProps {
   imageUrl: string;
   alt: string;
   className?: string;
+  startTime?: number;
+  endTime?: number;
 }
 
-const CoverSection = ({ imageUrl, alt, className = "" }: CoverSectionProps) => {
-  // Detect if the URL is a video
-  const isVideo = imageUrl.match(/\.(mp4|webm|ogg)$/i) || imageUrl.includes('/video/');
+const CoverSection = ({ imageUrl, alt, className = "", startTime, endTime }: CoverSectionProps) => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const playerRef = useRef<any>(null);
+  
+  // Detect if the URL is a YouTube video
+  const isYouTube = imageUrl.includes('youtube.com') || imageUrl.includes('youtu.be');
+  
+  // Detect if the URL is a regular video file
+  const isVideo = imageUrl.match(/\.(mp4|webm|ogg|mov)$/i) || imageUrl.includes('/video/');
+  
+  // Extract YouTube video ID
+  const getYouTubeVideoId = (url: string): string | null => {
+    const patterns = [
+      /(?:youtube\.com\/watch\?v=)([^&]+)/,
+      /(?:youtu\.be\/)([^?]+)/,
+      /(?:youtube\.com\/embed\/)([^?]+)/
+    ];
+    
+    for (const pattern of patterns) {
+      const match = url.match(pattern);
+      if (match) return match[1];
+    }
+    return null;
+  };
+
+  useEffect(() => {
+    if (!isYouTube || typeof window === 'undefined') return;
+
+    const videoId = getYouTubeVideoId(imageUrl);
+    if (!videoId) return;
+
+    // Load YouTube IFrame API
+    const loadYouTubeAPI = () => {
+      if ((window as any).YT && (window as any).YT.Player) {
+        initializePlayer();
+        return;
+      }
+
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+      (window as any).onYouTubeIframeAPIReady = initializePlayer;
+    };
+
+    const initializePlayer = () => {
+      if (!iframeRef.current) return;
+
+      playerRef.current = new (window as any).YT.Player(iframeRef.current, {
+        videoId: videoId,
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          modestbranding: 1,
+          rel: 0,
+          showinfo: 0,
+          mute: 1,
+          loop: 0,
+          playsinline: 1,
+          start: startTime || 0,
+          end: endTime,
+        },
+        events: {
+          onReady: (event: any) => {
+            event.target.mute();
+            event.target.playVideo();
+            
+            // Set up time checking for looping
+            if (startTime !== undefined && endTime !== undefined) {
+              const checkTime = setInterval(() => {
+                if (playerRef.current && playerRef.current.getCurrentTime) {
+                  const currentTime = playerRef.current.getCurrentTime();
+                  if (currentTime >= endTime) {
+                    playerRef.current.seekTo(startTime, true);
+                  }
+                }
+              }, 100);
+
+              return () => clearInterval(checkTime);
+            }
+          },
+          onStateChange: (event: any) => {
+            // Loop the video when it ends
+            if (event.data === (window as any).YT.PlayerState.ENDED) {
+              if (startTime !== undefined) {
+                playerRef.current.seekTo(startTime, true);
+                playerRef.current.playVideo();
+              }
+            }
+          }
+        }
+      });
+    };
+
+    loadYouTubeAPI();
+
+    return () => {
+      if (playerRef.current && playerRef.current.destroy) {
+        playerRef.current.destroy();
+      }
+    };
+  }, [imageUrl, startTime, endTime, isYouTube]);
+
+  if (isYouTube) {
+    return (
+      <section className={`relative w-full overflow-hidden ${className}`}>
+        <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden">
+          <div 
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%', // 16:9 aspect ratio
+              height: 0,
+              overflow: 'hidden'
+            }}
+          >
+            <iframe
+              ref={iframeRef}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 0
+              }}
+              allow="autoplay; encrypted-media"
+              data-testid="cover-youtube-video"
+            />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={`relative w-full overflow-hidden ${className}`}>

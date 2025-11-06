@@ -20,8 +20,8 @@ import MusicControl from '@/components/MusicControl';
 import BowTieGraphic from '@/components/BowTieGraphic';
 import { AnimationContext } from '@/contexts/AnimationContext';
 
-// Cover videos from Cloudinary
-const cover1Video = 'https://res.cloudinary.com/ddkgrqrt9/video/upload/v1762332256/Sunset_1_d5jxuo.mov';
+// Cover videos
+const cover1Video = 'https://www.youtube.com/watch?v=YMKjUxJa6C4';
 const proposalVideo = 'https://res.cloudinary.com/ddkgrqrt9/video/upload/v1762332256/Proposal_nh5seg.mov';
 
 const Index = () => {
@@ -123,6 +123,8 @@ const Index = () => {
           <CoverSection
             imageUrl={cover1Video}
             alt="Chris & Kate Wedding Cover Video 1"
+            startTime={19}
+            endTime={25}
           />
           <VenueSection />
           <DressCodeSection />

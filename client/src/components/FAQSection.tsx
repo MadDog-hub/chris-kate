@@ -58,7 +58,7 @@ const FAQSection = () => {
     {
       question: "Can I bring a gift?",
       icon: Gift,
-      answer: "Your presence is the greatest gift of all! However, if you wish to honor us with a gift, monetary gifts via GCash are appreciated. Details can be found in the gifts section of this website."
+      answer: "Your presence is the greatest gift of all! However, if you wish to honor us with a gift, monetary gifts are appreciated. Details can be found in the gifts section of this website."
     },
     {
       question: "Will there be music and dancing?",

@@ -162,6 +162,12 @@ const StorySection = () => {
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 3.5 } : { duration: 0 }}
     >
+      {/* Decorative Line Art */}
+      <div className="line-art-corner-tl" style={{ opacity: 0.5 }} />
+      <div className="line-art-corner-tr" style={{ opacity: 0.5 }} />
+      <div className="line-art-circle" style={{ top: '10%', right: '7%', width: '100px', height: '100px', opacity: 0.4 }} />
+      <div className="line-art-circle" style={{ bottom: '15%', left: '5%', width: '140px', height: '140px', opacity: 0.4 }} />
+      
       <div className="text-center py-16 sm:py-20 px-4 relative z-10">
         <motion.div
           initial={animationsEnabled ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}

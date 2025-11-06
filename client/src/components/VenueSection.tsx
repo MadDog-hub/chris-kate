@@ -36,11 +36,16 @@ const VenueSection = () => {
   return (
     <motion.section 
       id="venue" 
-      className="section-pastel-blue py-12 px-4"
+      className="section-pastel-blue py-12 px-4 relative"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 6.5 } : { duration: 0 }}
     >
+      {/* Decorative Line Art */}
+      <div className="line-art-corner-tr" />
+      <div className="line-art-corner-bl" />
+      <div className="line-art-circle" style={{ top: '20%', left: '5%', width: '100px', height: '100px' }} />
+      <div className="line-art-circle" style={{ bottom: '10%', right: '8%' }} />
       {/* Section Title */}
       <motion.div 
         className="text-center mb-16"

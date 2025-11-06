@@ -533,6 +533,21 @@
     overflow: hidden;
   }
 
+  .section-pastel-blue::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(51, 51, 51, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 80% 70%, rgba(51, 51, 51, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .section-pastel-blue > * {
     position: relative;
     z-index: 2;
@@ -543,6 +558,21 @@
     color: hsl(0, 0%, 20%);
     position: relative;
     overflow: hidden;
+  }
+
+  .section-hard-blue::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 30% 20%, rgba(51, 51, 51, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 70% 80%, rgba(51, 51, 51, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .section-hard-blue > * {
@@ -579,4 +609,72 @@
 .location-guide-btn:hover {
   color: hsl(var(--primary)) !important;
   opacity: 0.8;
+}
+
+/* Decorative Line Art Elements */
+.line-art-corner-tl {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  border-top: 1px solid rgba(51, 51, 51, 0.1);
+  border-left: 1px solid rgba(51, 51, 51, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line-art-corner-tr {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  border-top: 1px solid rgba(51, 51, 51, 0.1);
+  border-right: 1px solid rgba(51, 51, 51, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line-art-corner-bl {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+  border-left: 1px solid rgba(51, 51, 51, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line-art-corner-br {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+  border-right: 1px solid rgba(51, 51, 51, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line-art-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(51, 51, 51, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line-art-flourish {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
 }

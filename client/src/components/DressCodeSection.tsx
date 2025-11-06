@@ -12,6 +12,12 @@ const DressCodeSection = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 7.5 }}
     >
+      {/* Decorative Line Art */}
+      <div className="line-art-corner-tl" />
+      <div className="line-art-corner-br" />
+      <div className="line-art-circle" style={{ top: '25%', right: '3%', width: '110px', height: '110px' }} />
+      <div className="line-art-circle" style={{ bottom: '30%', left: '5%', width: '130px', height: '130px' }} />
+      
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div 

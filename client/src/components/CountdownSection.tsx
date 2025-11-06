@@ -37,11 +37,17 @@ const CountdownSection = () => {
   return (
     <motion.section 
       id="countdown" 
-      className="section-pastel-blue py-2 px-4"
+      className="section-pastel-blue py-2 px-4 relative"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 2.5 } : { duration: 0 }}
     >
+      {/* Decorative Line Art */}
+      <div className="line-art-corner-tl" />
+      <div className="line-art-corner-br" />
+      <div className="line-art-circle" style={{ top: '10%', right: '5%' }} />
+      <div className="line-art-circle" style={{ bottom: '15%', left: '8%', width: '120px', height: '120px' }} />
+      
       <div className="max-w-4xl mx-auto text-center relative">
         <motion.div 
           className="mb-12"

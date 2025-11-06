@@ -74,11 +74,17 @@ const FAQSection = () => {
 
   return (
     <motion.section 
-      className="section-pastel-blue py-2 px-4"
+      className="section-pastel-blue py-2 px-4 relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 11.5 }}
     >
+      {/* Decorative Line Art */}
+      <div className="line-art-corner-tr" />
+      <div className="line-art-corner-bl" />
+      <div className="line-art-circle" style={{ top: '15%', left: '3%', width: '120px', height: '120px' }} />
+      <div className="line-art-circle" style={{ bottom: '20%', right: '5%', width: '90px', height: '90px' }} />
+      
       <div className="max-w-4xl mx-auto mt-[24px] mb-[24px]">
         {/* Section Header */}
         <motion.div 

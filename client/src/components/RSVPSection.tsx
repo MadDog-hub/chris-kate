@@ -17,6 +17,12 @@ const RSVPSection = () => {
         <div className="absolute top-0 right-0 w-96 h-96 border border-primary/30 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 border border-primary/30 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>
       </div>
+      
+      {/* Decorative Line Art */}
+      <div className="line-art-corner-tl" />
+      <div className="line-art-corner-br" />
+      <div className="line-art-circle" style={{ top: '30%', right: '10%', width: '80px', height: '80px' }} />
+      <div className="line-art-circle" style={{ bottom: '25%', left: '12%', width: '100px', height: '100px' }} />
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Section Header */}
         <motion.div 

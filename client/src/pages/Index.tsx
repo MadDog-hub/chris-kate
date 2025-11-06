@@ -7,6 +7,7 @@ import CountdownSection from '@/components/CountdownSection';
 import StorySection from '@/components/StorySection';
 import ScrollTriggeredTimeline from '@/components/ScrollTriggeredTimeline';
 import VenueSection from '@/components/VenueSection';
+import DressCodeSection from '@/components/DressCodeSection';
 import HashtagGiftsSection from '@/components/HashtagGiftsSection';
 import EntourageSection from '@/components/EntourageSection';
 import RSVPSection from '@/components/RSVPSection';
@@ -122,6 +123,7 @@ const Index = () => {
             alt="Chris & Kate Wedding Cover Video 1"
           />
           <VenueSection />
+          <DressCodeSection />
           <HashtagGiftsSection />
           <RSVPSection />
           <MemorableMomentsSection />

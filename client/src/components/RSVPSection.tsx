@@ -49,10 +49,10 @@ const RSVPSection = () => {
 
             {/* RSVP Message */}
             <div className="space-y-6 mb-8">
-              <p className="text-xl font-script italic leading-relaxed text-foreground/95" data-testid="text-rsvp-message">
+              <p className="text-xl font-body leading-relaxed text-foreground/95" data-testid="text-rsvp-message">
                 Your presence would make our day complete
               </p>
-              <p className="text-xl font-script italic text-foreground/90 leading-relaxed" data-testid="text-rsvp-details">
+              <p className="text-xl font-body text-foreground/90 leading-relaxed" data-testid="text-rsvp-details">
                 Please confirm your attendance by clicking the button below. 
                 We're excited to celebrate this special moment with you!
               </p>

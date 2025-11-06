@@ -85,7 +85,7 @@
     /* Elegant Typography Scale */
     --font-display: 'Boska', 'Cormorant Garamond', serif; /* Headers - Boska 700 */
     --font-script: 'Boska', 'Cormorant Garamond', serif; /* Sub-headers - Boska 500 */
-    --font-times: 'Times New Roman', Times, serif;
+    --font-times: 'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     --font-body: 'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; /* Body text */
 
     /* Smooth Transitions */

@@ -60,7 +60,7 @@ const HashtagGiftsSection = () => {
             >
               We'd love to see the beautiful moments you capture on our special day!
             </p>
-            <p className="text-2xl font-display italic text-primary" data-testid="text-hashtag">
+            <p className="text-2xl font-body text-primary" data-testid="text-hashtag">
               #CHRISpeciallymadeforKATE
             </p>
             <p 

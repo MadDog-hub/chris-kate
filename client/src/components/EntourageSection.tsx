@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Cross } from 'lucide-react';
 
 const EntourageSection = () => {
   return (
@@ -35,7 +36,7 @@ const EntourageSection = () => {
             </div>
             <div data-testid="section-parents-bride">
               <h3 className="font-display italic text-sm text-black mb-2">Parents of the Bride</h3>
-              <p className="text-black font-normal text-xs">Mr. Noel B. Tabsing (Deceased)</p>
+              <p className="text-black font-normal text-xs">Mr. Noel B. Tabsing <Cross className="inline h-3 w-3" /></p>
               <p className="text-black font-normal text-xs">Mrs. Liza L. Tabsing</p>
             </div>
           </div>

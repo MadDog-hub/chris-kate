@@ -167,7 +167,6 @@ const StorySection = () => {
       <div className="line-art-corner-tr" style={{ opacity: 0.5 }} />
       <div className="line-art-circle" style={{ top: '10%', right: '7%', width: '100px', height: '100px', opacity: 0.4 }} />
       <div className="line-art-circle" style={{ bottom: '15%', left: '5%', width: '140px', height: '140px', opacity: 0.4 }} />
-      
       <div className="text-center py-16 sm:py-20 px-4 relative z-10">
         <motion.div
           initial={animationsEnabled ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
@@ -192,7 +191,6 @@ const StorySection = () => {
           </div>
         </motion.div>
       </div>
-
       <div 
         ref={containerRef} 
         className="relative overflow-hidden"
@@ -332,7 +330,6 @@ const StorySection = () => {
           ))}
         </div>
       </div>
-
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
@@ -357,7 +354,7 @@ const StorySection = () => {
               Four beautiful years unfolded while living a life of shared laughter, quiet strength, and enduring love through every up and down. To mark a new chapter, Chris brought Kate to the breathtaking beauty of Bohol to meet his extended family. He led her to the highest point of the Chocolate Hills, a panoramic view stretching before them. As a soft, romantic mist began to fall—nature echoing their past promise—Chris knelt down. Looking into the eyes of the woman who waited for her answered prayer, he asked her the most important question of his life: "Will you marry me?"
             </p>
             
-            <p className="text-sm italic text-foreground/60 text-right mt-6">
+            <p className="text-sm italic text-right mt-6 text-[#000]">
               — written by Chris
             </p>
             
